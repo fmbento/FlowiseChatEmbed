@@ -12,6 +12,22 @@ import { Popup } from '@/features/popup'
 
 type messageType = 'apiMessage' | 'userMessage' | 'usermessagewaiting'
 
+function replaceTerms(message, brazilToPortugal) {
+  Object.keys(brazilToPortugal).forEach(function(term) {
+    var regex = new RegExp(term, 'g');
+    message = message.replace(regex, brazilToPortugal[term]);
+  });
+  return message;
+}
+
+var brazilToPortugal = {
+  // Add mappings here
+    'acessar': 'aceder',
+    'eletrônico': 'eletrónico',
+    'pesquisa': 'investigação',
+    'busca': 'pesquisa',
+};
+
 export type MessageType = {
     message: string
     type: messageType,
@@ -344,7 +360,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
                                     )}
                                     {message.type === 'apiMessage' && (
                                         <BotBubble
-                                            message={message.message}
+                                            message=replaceTerms({message.message}, brazilToPortugal);
                                             backgroundColor={props.botMessage?.backgroundColor}
                                             textColor={props.botMessage?.textColor}
                                             showAvatar={props.botMessage?.showAvatar}
