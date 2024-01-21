@@ -75,6 +75,7 @@ const brazilToPortugal: { [key: string]: string } = {
   você: '',
   Você: '',
   acessar: 'aceder',
+  'usando':'a usar',
 };
 
 export const Bot = (botProps: BotProps & { class?: string }) => {
