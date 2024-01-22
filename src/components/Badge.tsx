@@ -36,5 +36,7 @@ export const Badge = (props: Props) => {
     if (observer) observer.disconnect();
   });
 
-  return <span />;
+  return (
+    <div><span>sBIDM-UA</span></div>
+  );
 };
