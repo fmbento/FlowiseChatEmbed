@@ -37,20 +37,6 @@ export const Badge = (props: Props) => {
   });
 
   return (
-    <span
-      style={{
-        'font-size': '13px',
-        position: 'absolute',
-        bottom: 0,
-        padding: '10px',
-        margin: 'auto',
-        width: '100%',
-        'text-align': 'center',
-        color: props.poweredByTextColor ?? defaultTextColor,
-        'background-color': props.badgeBackgroundColor ?? '#ffffff',
-      }}
-    >
-      <span>&#x1F381; Por favor, avalie-nos e partilhe o seu feedback / sugest&#245;es. Muito obrigado! &#x1F60A;</span>
-    </span>
+    <span></span>
   );
 };
